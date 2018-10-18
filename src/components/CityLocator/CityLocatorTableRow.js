@@ -6,7 +6,7 @@ class CityLocatorTableRow extends React.Component {
     return (
       <tr>
         <td>
-          {city.name}
+          {city.city}
         </td>
         <td>
           {city.latitude}
