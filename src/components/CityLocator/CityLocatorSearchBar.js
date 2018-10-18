@@ -19,6 +19,7 @@ class CityLocatorSearchBar extends React.Component {
           type="text"
           placeholder="Search city..."
           value={searchText}
+          className="form-control"
           onChange={this.handleSearchTextChange} />
       </form>
     );

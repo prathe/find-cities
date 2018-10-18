@@ -3,10 +3,10 @@ import React from 'react';
 class CityLocatorTableHeader extends React.Component {
   render() {
     return (
-      <thead>
+      <thead className="thead-light">
         <tr>
           <th>
-            Nom
+            Name
           </th>
           <th>
             Latitude

@@ -11,11 +11,11 @@ class CityLocatorTable extends React.Component {
     });
 
     const no_result = (
-      <p>If we found a match, it will appear right here...</p>
+      <p className="text-secondary p-3">If we find cities, they will appear right here...</p>
     )
 
     const table = (
-      <table>
+      <table className="table table-bordered table-hover">
         <CityLocatorTableHeader />
         <tbody>
           {city_locator_table_rows}
