@@ -5,15 +5,10 @@ class CityLocatorTableHeader extends React.Component {
     return (
       <thead className="thead-light">
         <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Latitude
-          </th>
-          <th>
-            Longitude
-          </th>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
         </tr>      
       </thead>
     );

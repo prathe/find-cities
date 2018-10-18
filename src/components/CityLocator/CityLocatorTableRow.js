@@ -9,6 +9,9 @@ class CityLocatorTableRow extends React.Component {
           {city.city}
         </td>
         <td>
+          {city.country}
+        </td>
+        <td>
           {city.latitude}
         </td>
         <td>

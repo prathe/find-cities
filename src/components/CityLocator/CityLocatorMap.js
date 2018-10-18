@@ -3,7 +3,7 @@ import React from 'react';
 class CityLocatorMap extends React.Component {
   render() {
     return (
-      <p>Something that looks like a map</p>
+      <p className="p-3">Map would go here</p>
     );
   }
 }
