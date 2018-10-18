@@ -12,10 +12,12 @@ class CityLocatorTable extends React.Component {
 
     return (
       <div>
-        <CityLocatorTableHeader />
-        <tbody>
-          {city_locator_table_rows}
-        </tbody>
+        <table>
+          <CityLocatorTableHeader />
+          <tbody>
+            {city_locator_table_rows}
+          </tbody>
+        </table>
       </div>
     );
   }
