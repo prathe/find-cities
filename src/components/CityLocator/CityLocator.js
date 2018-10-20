@@ -41,7 +41,7 @@ class CityLocator extends React.Component {
           onSearchTextChange={this.handleSearchTextChange}
         />
         <CityLocatorTable cities={this.state.cities} />
-        <CityLocatorMap />
+        <CityLocatorMap cities={this.state.cities} />
       </div>
     )
   }
