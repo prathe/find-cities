@@ -4,13 +4,9 @@ function lookupCities(searchText, callback) {
   headers.append('X-Mashape-Key', process.env.REACT_APP_MASHAPE_KEY);
   const fetch_opt = {headers: headers}
   fetch(url, fetch_opt)
-    .then(
-      (res) => res.json()
-    )
-    .then(
-      (res) => callback(res.data, searchText)
-    )
-    .catch((error) => console.log(error));
+    .then(res => res.json())
+    .then(res => callback(res.data, searchText))
+    .catch(error => console.log(error));
 }
 
 export {lookupCities}
