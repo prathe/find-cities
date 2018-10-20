@@ -1,22 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 class CityLocatorTableRow extends React.Component {
   render() {
-    const city = this.props.city;
+    const {name, lat, lng} = this.props.city
+
     return (
       <tr>
-        <td>
-          {city.city + ', ' + city.countryCode}
-        </td>
-        <td>
-          {city.latitude}
-        </td>
-        <td>
-          {city.longitude}
-        </td>
+        <td>{name}</td>
+        <td>{lat}</td>
+        <td>{lng}</td>
       </tr>
-    );
+    )
   }
 }
 
-export default CityLocatorTableRow;
+export default CityLocatorTableRow

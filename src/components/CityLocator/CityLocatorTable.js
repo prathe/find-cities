@@ -1,18 +1,14 @@
-// TODO: this component display possibly two things: table of results or a no-results text
-//       since the no-results text is not simply an empty table I need to understand which
-//       pattern to use here.
-
-import React from 'react';
-import CityLocatorTableHeader from './CityLocatorTableHeader';
-import CityLocatorTableRow from './CityLocatorTableRow';
+import React from 'react'
+import CityLocatorTableHeader from './CityLocatorTableHeader'
+import CityLocatorTableRow from './CityLocatorTableRow'
 
 class CityLocatorTable extends React.Component {
   render() {  
-    const city_locator_table_rows = [];
+    const city_locator_table_rows = []
 
     this.props.cities.forEach((city) => {
-      city_locator_table_rows.push(<CityLocatorTableRow city={city} />);
-    });
+      city_locator_table_rows.push(<CityLocatorTableRow city={city} />)
+    })
 
     const no_result = (
       <p className="text-secondary p-3">If we find cities, they will appear right here...</p>
@@ -25,7 +21,7 @@ class CityLocatorTable extends React.Component {
           {city_locator_table_rows}
         </tbody>
       </table>
-    );
+    )
 
     const widget = city_locator_table_rows.length === 0 ? no_result : table
 
@@ -33,8 +29,8 @@ class CityLocatorTable extends React.Component {
       <div>
         {widget}
       </div>
-    );
+    )
   }
 }
 
-export default CityLocatorTable;
+export default CityLocatorTable

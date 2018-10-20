@@ -1,26 +1,26 @@
-import React from 'react';
-import CityLocatorSearchBar from './CityLocatorSearchBar';
-import CityLocatorTable from './CityLocatorTable';
-import CityLocatorMap from './CityLocatorMap';
+import React from 'react'
+import CityLocatorSearchBar from './CityLocatorSearchBar'
+import CityLocatorTable from './CityLocatorTable'
+import CityLocatorMap from './CityLocatorMap'
 import {lookupCities} from '../DataSource'
 
 class CityLocator extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       searchText: '',
       cities: []
-    };
+    }
 
-    this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
-    this.handleResults = this.handleResults.bind(this);
+    this.handleSearchTextChange = this.handleSearchTextChange.bind(this)
+    this.handleResults = this.handleResults.bind(this)
   }
 
   handleSearchTextChange(searchText) {
-    this.setState({searchText: searchText});
+    this.setState({searchText: searchText})
 
     if(searchText.length === 0) {
-      this.setState({cities: []});
+      this.setState({cities: []})
     } else if(searchText.length >= 3) {
       lookupCities(searchText, this.handleResults)
     }
@@ -28,6 +28,7 @@ class CityLocator extends React.Component {
 
   handleResults(results, searchText) {
     console.log('got results!')
+    console.log(results)
     if (this.state.searchText === searchText)
       this.setState({cities: results})
   }
@@ -42,8 +43,8 @@ class CityLocator extends React.Component {
         <CityLocatorTable cities={this.state.cities} />
         <CityLocatorMap />
       </div>
-    );
+    )
   }
 }
 
-export default CityLocator;
+export default CityLocator
