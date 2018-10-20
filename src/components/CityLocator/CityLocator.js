@@ -27,8 +27,6 @@ class CityLocator extends React.Component {
   }
 
   handleResults(results, searchText) {
-    console.log('got results!')
-    console.log(results)
     if (this.state.searchText === searchText)
       this.setState({cities: results})
   }
