@@ -2,6 +2,7 @@ import React from 'react';
 import CityLocatorSearchBar from './CityLocatorSearchBar';
 import CityLocatorTable from './CityLocatorTable';
 import CityLocatorMap from './CityLocatorMap';
+import {lookupCities} from '../DataSource'
 
 class CityLocator extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class CityLocator extends React.Component {
     };
 
     this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
+    this.handleResults = this.handleResults.bind(this);
   }
 
   handleSearchTextChange(searchText) {
@@ -20,32 +22,14 @@ class CityLocator extends React.Component {
     if(searchText.length === 0) {
       this.setState({cities: []});
     } else if(searchText.length >= 3) {
-      this.searchCities(searchText);
+      lookupCities(searchText, this.handleResults)
     }
   }
 
-  searchCities(text) {
-    const url = `https://wft-geo-db.p.mashape.com/v1/geo/cities?namePrefix=${text}&sort=name&offset=0&limit=10`;
-    let headers = new Headers();
-    headers.append('X-Mashape-Key', process.env.REACT_APP_MASHAPE_KEY);
-    const fetch_opt = {headers: headers}
-    fetch(url, fetch_opt)
-      .then(
-        (res) => {
-          return res.json();
-        }
-      )
-      .then(
-        (res) => {
-          // Prevent race conditions.
-          // Are the results still relevant to the user?
-          // Yes: Typically the user type slower than the request speed or has stop typing.
-          // No: The user types fast and may be still typing.
-          if (this.state.searchText === text)
-            this.setState({cities: res.data});
-        }
-      )
-      .catch((error) => console.log(error));
+  handleResults(results, searchText) {
+    console.log('got results!')
+    if (this.state.searchText === searchText)
+      this.setState({cities: results})
   }
 
   render() {

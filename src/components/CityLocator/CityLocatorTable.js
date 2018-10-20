@@ -1,3 +1,7 @@
+// TODO: this component display possibly two things: table of results or a no-results text
+//       since the no-results text is not simply an empty table I need to understand which
+//       pattern to use here.
+
 import React from 'react';
 import CityLocatorTableHeader from './CityLocatorTableHeader';
 import CityLocatorTableRow from './CityLocatorTableRow';
