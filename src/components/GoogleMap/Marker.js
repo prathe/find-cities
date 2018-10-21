@@ -30,9 +30,12 @@ function Marker(props) {
     margin: 0px;
     max-width: none;
   `
+  const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const label = labels[props.index % labels.length]
+
   return(
     <Wrapper>
-      <Label>{props.text}</Label>
+      <Label>{label}</Label>
       <Img src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi-dotless2.png" />
     </Wrapper>
   )
