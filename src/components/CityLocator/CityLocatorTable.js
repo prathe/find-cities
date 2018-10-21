@@ -18,11 +18,7 @@ function CityLocatorTable(props) {
     )
   }
 
-  if (props.cities.length > 0) {
-    return renderTable()
-  } else {
-    return renderNoResult()
-  }
+  return props.cities.length > 0 ? renderTable() : renderNoResult()
 }
 
 export default CityLocatorTable
