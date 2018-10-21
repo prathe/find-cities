@@ -19,7 +19,7 @@ function CityLocatorMap(props) {
         center={center}
         //options={MAP.options}
         //onChange={this.handleMapChange}
-        yesIWantToUseGoogleMapApiInternals
+        //yesIWantToUseGoogleMapApiInternals
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API }}
       />
     </div>
