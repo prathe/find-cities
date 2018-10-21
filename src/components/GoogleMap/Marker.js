@@ -2,28 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Marker(props) {
+
+  // z-index: For overlapping markers, the lower the index the more relevant the location me be.
   const Wrapper = styled.div`
+    position: absolute;
     width: 27px;
     height: 43px;
-    overflow: hidden;
-    position: absolute;
-    left: -12px;
     top: -43px;
+    left: -12px;
+    overflow: hidden;
+    z-index: ${() => 20 - props.index};
   `
 
-  const Label = styled.span`
+  const Label = styled.div`
     position: absolute;
+    width: 27px;
+    height: 43px;
+    text-align: center;
     top: 6px;
-    left: 9px;
+    left: 0px;
     font-size: 15px;
     z-index: 1;
   `
   const Img = styled.img`
     position: absolute;
-    left: 0px;
-    top: 0px;
     width: 27px;
     height: 43px;
+    top: 0px;
+    left: 0px;
     user-select: none;
     border: 0px;
     padding: 0px;
