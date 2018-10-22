@@ -1,5 +1,5 @@
 import React from 'react'
-import CityLocatorSearchBar from './CityLocatorSearchBar'
+import InputLookup from '../Inputs/Lookup'
 import CityLocatorTable from './CityLocatorTable'
 import CityLocatorMap from './CityLocatorMap'
 import {lookupCities} from '../DataSource'
@@ -46,7 +46,8 @@ class CityLocator extends React.Component {
   render() {
     return (
       <div>
-        <CityLocatorSearchBar
+        <InputLookup
+          placeHolder='Search for a city name...'
           searchText={this.state.searchText}
           onSearchTextChange={this.handleSearchTextChange}
         />

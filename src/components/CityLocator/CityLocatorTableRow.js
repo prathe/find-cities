@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import Marker from '../GoogleMap/Marker'
 
 class CityLocatorTableRow extends React.Component {
   handleOnClick(id, e) {
