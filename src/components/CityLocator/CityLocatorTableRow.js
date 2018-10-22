@@ -1,11 +1,22 @@
 import React from 'react'
 
 class CityLocatorTableRow extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  handleOnClick(id, e) {
+    this.props.onSelect(id)
+  }
+
   render() {
-    const {name, lat, lng} = this.props.city
+    const {id, name, lat, lng} = this.props.city
+
+    // binding the function each time it is rendered to also bind the city ID
+    const handleOnClick = this.handleOnClick.bind(this, id)
 
     return (
-      <tr>
+      <tr onClick={handleOnClick}>
         <td>{name}</td>
         <td>{lat}</td>
         <td>{lng}</td>

@@ -13,6 +13,7 @@ function geoDBtoCities(arr) {
   return arr.map(
     function({city, countryCode, latitude, longitude}) {
       return {
+        id: latitude.toString() + '-' + longitude.toString(),
         name: city + ', ' + countryCode,
         lat: latitude,
         lng: longitude  

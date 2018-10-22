@@ -2,23 +2,38 @@ import React from 'react'
 import CityLocatorTableHeader from './CityLocatorTableHeader'
 import CityLocatorTableRow from './CityLocatorTableRow'
 
-function CityLocatorTable(props) {
-  function renderNoResult() {
+class CityLocatorTable extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleOnSelect = this.handleOnSelect.bind(this)
+  }
+
+  renderNoResult() {
     return <p className="text-secondary p-3">If we find cities, they will appear right here...</p>
   }
 
-  function renderTable() {
+  renderTable() {
     return(
       <table className="table table-bordered table-hover">
         <CityLocatorTableHeader />
         <tbody>
-          {props.cities.map(city => <CityLocatorTableRow city={city} />)}
+          {this.props.cities.map(city =>
+            <CityLocatorTableRow
+              city={city}
+              onSelect={this.handleOnSelect} />
+          )}
         </tbody>
       </table>
     )
   }
 
-  return props.cities.length > 0 ? renderTable() : renderNoResult()
+  handleOnSelect(id) {
+    this.props.onSelect(id)
+  }
+
+  render() {
+    return this.props.cities.length > 0 ? this.renderTable() : this.renderNoResult()
+  }
 }
 
 export default CityLocatorTable

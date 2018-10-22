@@ -9,11 +9,13 @@ class CityLocator extends React.Component {
     super(props)
     this.state = {
       searchText: '',
-      cities: []
+      cities: [],
+      map_center_coord: null
     }
 
     this.handleSearchTextChange = this.handleSearchTextChange.bind(this)
     this.handleResults = this.handleResults.bind(this)
+    this.handleOnSelectCity = this.handleOnSelectCity.bind(this)
   }
 
   handleSearchTextChange(searchText) {
@@ -31,6 +33,14 @@ class CityLocator extends React.Component {
       this.setState({cities: results})
   }
 
+  // center the map
+  handleOnSelectCity(_id) {
+    this.setState((state, props) => {
+      const {lat, lng} = state.cities.find(({id}) => id === _id)
+      return {map_center_coord: {lat, lng}}
+    })
+  }
+
   render() {
     return (
       <div>
@@ -38,8 +48,14 @@ class CityLocator extends React.Component {
           searchText={this.state.searchText}
           onSearchTextChange={this.handleSearchTextChange}
         />
-        <CityLocatorTable cities={this.state.cities} />
-        <CityLocatorMap cities={this.state.cities} />
+
+        <CityLocatorMap
+          cities={this.state.cities}
+          center={this.state.map_center_coord} />
+
+        <CityLocatorTable
+          cities={this.state.cities}
+          onSelect={this.handleOnSelectCity}  />
       </div>
     )
   }

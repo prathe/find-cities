@@ -6,14 +6,13 @@ import Marker from '../GoogleMap/Marker'
 class Map extends React.Component {
   render() {
     const defaultCenter = {lat: 0, lng: 0}
-    const center = this.props.locations[0]
     const defaultZoom = 0;
 
     return(
       <GoogleMapReact
         defaultZoom={defaultZoom}
         defaultCenter={defaultCenter}
-        center={center}
+        center={this.props.center}
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API }}
       >
         {this.props.locations.map(function(location, index) {
@@ -22,7 +21,6 @@ class Map extends React.Component {
               lat={location.lat}
               lng={location.lng}
               index={index}
-              blah={index}
             />
           )
         })}

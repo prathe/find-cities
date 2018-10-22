@@ -9,7 +9,9 @@ class CityLocatorMap extends React.Component {
      
     return (
       <div style={{ height: '800px', width: '100%' }}>
-        <Map locations={locations} />
+        <Map
+          center={this.props.center}
+          locations={locations} />
       </div>
     )
   }
