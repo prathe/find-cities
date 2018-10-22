@@ -10,7 +10,7 @@ class CityLocatorTableRow extends React.Component {
   }
 
   render() {
-    const {id, name, lat, lng} = this.props.city
+    const {id, name, country, lat, lng} = this.props.city
 
     // binding the function each time it is rendered to also bind the city ID
     const handleOnClick = this.handleOnClick.bind(this, id)
@@ -18,6 +18,7 @@ class CityLocatorTableRow extends React.Component {
     return (
       <tr onClick={handleOnClick}>
         <td>{name}</td>
+        <td>{country}</td>
         <td>{lat}</td>
         <td>{lng}</td>
       </tr>

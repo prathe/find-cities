@@ -1,3 +1,7 @@
+//import countries from 'i18n-iso-countries'
+var countries = require("i18n-iso-countries");
+countries.registerLocale(require("i18n-iso-countries/langs/en.json"))
+
 function lookupCities(searchText, callback) {
   const url = `https://wft-geo-db.p.mashape.com/v1/geo/cities?namePrefix=${searchText}&sort=name&offset=0&limit=10`
   let headers = new Headers()
@@ -14,7 +18,8 @@ function geoDBtoCities(arr) {
     function({city, countryCode, latitude, longitude}) {
       return {
         id: latitude.toString() + '-' + longitude.toString(),
-        name: city + ', ' + countryCode,
+        name: city,
+        country: countries.getName(countryCode, 'en'),
         lat: latitude,
         lng: longitude  
       }
