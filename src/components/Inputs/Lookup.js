@@ -1,6 +1,6 @@
 import React from 'react'
 
-class CityLocatorSearchBar extends React.Component {
+class Lookup extends React.Component {
   constructor(props) {
     super(props)
     this.handleSearchTextChange = this.handleSearchTextChange.bind(this)
@@ -24,4 +24,4 @@ class CityLocatorSearchBar extends React.Component {
   }
 }
 
-export default CityLocatorSearchBar
+export default Lookup

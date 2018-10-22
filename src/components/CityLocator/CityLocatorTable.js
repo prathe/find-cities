@@ -8,8 +8,13 @@ class CityLocatorTable extends React.Component {
     this.handleOnSelect = this.handleOnSelect.bind(this)
   }
 
+  // Relay the selected city from the child to the parent
+  handleOnSelect(id) {
+    this.props.onSelect(id)
+  }
+
   renderNoResult() {
-    return <p className="text-secondary p-3">If we find cities, they will appear right here.</p>
+    return <p className="text-secondary p-3">If cities are found, they will appear right here.</p>
   }
 
   renderTable() {
@@ -27,10 +32,6 @@ class CityLocatorTable extends React.Component {
         </tbody>
       </table>
     )
-  }
-
-  handleOnSelect(id) {
-    this.props.onSelect(id)
   }
 
   render() {

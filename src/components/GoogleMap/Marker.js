@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Marker(props) {
 
-  // z-index: For overlapping markers, the lower the index the more relevant the location me be.
+  // z-index: For overlapping markers: a lower props.index may mean a more relevant location
   const Wrapper = styled.div`
     position: absolute;
     width: 27px;

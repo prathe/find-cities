@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import CityLocator from './CityLocator'
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">

@@ -4,8 +4,8 @@ import Marker from './Marker'
 
 class Map extends React.Component {
   render() {
-    const defaultCenter = {lat: 0, lng: 0}
     const defaultZoom = 0;
+    const defaultCenter = {lat: 0, lng: 0}
 
     return(
       <GoogleMapReact
