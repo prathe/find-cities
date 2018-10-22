@@ -1,10 +1,7 @@
 import React from 'react'
+import Marker from '../GoogleMap/Marker'
 
 class CityLocatorTableRow extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleOnClick(id, e) {
     this.props.onSelect(id)
   }
@@ -15,8 +12,11 @@ class CityLocatorTableRow extends React.Component {
     // binding the function each time it is rendered to also bind the city ID
     const handleOnClick = this.handleOnClick.bind(this, id)
 
+    const marker_labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const marker_text = marker_labels[this.props.index % marker_labels.length]
     return (
       <tr onClick={handleOnClick}>
+        <td>{marker_text}</td>
         <td>{name}</td>
         <td>{country}</td>
         <td>{lat}</td>

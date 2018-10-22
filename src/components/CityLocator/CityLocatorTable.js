@@ -17,9 +17,10 @@ class CityLocatorTable extends React.Component {
       <table className="table table-bordered table-hover">
         <CityLocatorTableHeader />
         <tbody>
-          {this.props.cities.map(city =>
+          {this.props.cities.map((city, index) =>
             <CityLocatorTableRow
               city={city}
+              index={index}
               onSelect={this.handleOnSelect} />
           )}
         </tbody>
