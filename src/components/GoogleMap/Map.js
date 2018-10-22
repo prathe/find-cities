@@ -17,6 +17,7 @@ class Map extends React.Component {
         {this.props.locations.map(function(location, index) {
           return(
             <Marker
+              key={index}
               lat={location.lat}
               lng={location.lng}
               index={index}

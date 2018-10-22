@@ -24,6 +24,7 @@ class CityLocatorTable extends React.Component {
         <tbody>
           {this.props.cities.map((city, index) =>
             <CityLocatorTableRow
+              key={index}
               city={city}
               index={index}
               onSelect={this.handleOnSelect}
