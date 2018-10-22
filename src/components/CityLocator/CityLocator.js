@@ -29,8 +29,10 @@ class CityLocator extends React.Component {
   }
 
   handleResults(results, searchText) {
-    if (this.state.searchText === searchText)
-      this.setState({cities: results})
+    if (this.state.searchText === searchText) {
+      const {lat, lng} = results[0] || {}
+      this.setState({cities: results, map_center_coord: {lat, lng}})
+    }
   }
 
   // center the map
