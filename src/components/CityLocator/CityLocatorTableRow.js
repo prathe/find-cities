@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 import Marker from '../GoogleMap/Marker'
 
 class CityLocatorTableRow extends React.Component {
@@ -14,14 +15,19 @@ class CityLocatorTableRow extends React.Component {
 
     const marker_labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     const marker_text = marker_labels[this.props.index % marker_labels.length]
+
+    const Tr = styled.tr`
+      cursor: pointer;
+    `
+
     return (
-      <tr onClick={handleOnClick}>
+      <Tr onClick={handleOnClick}>
         <td>{marker_text}</td>
         <td>{name}</td>
         <td>{country}</td>
         <td>{lat}</td>
         <td>{lng}</td>
-      </tr>
+      </Tr>
     )
   }
 }
