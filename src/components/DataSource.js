@@ -1,5 +1,4 @@
-//import countries from 'i18n-iso-countries'
-var countries = require("i18n-iso-countries");
+import countries from 'i18n-iso-countries'
 countries.registerLocale(require("i18n-iso-countries/langs/en.json"))
 
 function lookupCities(searchText, callback) {

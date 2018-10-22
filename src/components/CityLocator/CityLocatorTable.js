@@ -9,7 +9,7 @@ class CityLocatorTable extends React.Component {
   }
 
   renderNoResult() {
-    return <p className="text-secondary p-3">If we find cities, they will appear right here...</p>
+    return <p className="text-secondary p-3">If we find cities, they will appear right here.</p>
   }
 
   renderTable() {
