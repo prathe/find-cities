@@ -54,11 +54,13 @@ class CityLocator extends React.Component {
 
         <CityLocatorMap
           cities={this.state.cities}
-          center={this.state.map_center_coord} />
+          center={this.state.map_center_coord}
+        />
 
         <CityLocatorTable
           cities={this.state.cities}
-          onSelect={this.handleOnSelectCity}  />
+          onSelect={this.handleOnSelectCity}
+        />
       </div>
     )
   }

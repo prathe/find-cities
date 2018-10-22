@@ -9,9 +9,11 @@ class CityLocatorTableRow extends React.Component {
   render() {
     const {id, name, country, lat, lng} = this.props.city
 
-    // binding the function each time it is rendered to also bind the city ID
+    // MUST rebind the handler each time it is rendered to also bind the city ID
+    //      which changes when the row changes
     const handleOnClick = this.handleOnClick.bind(this, id)
 
+    // DRY those two lines that are exactly the same as in GoogleMap/Marker
     const marker_labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     const marker_text = marker_labels[this.props.index % marker_labels.length]
 

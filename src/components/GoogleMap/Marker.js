@@ -13,7 +13,6 @@ function Marker(props) {
     overflow: hidden;
     z-index: ${() => 20 - props.index};
   `
-
   const Label = styled.div`
     position: absolute;
     width: 27px;
@@ -45,7 +44,6 @@ function Marker(props) {
       <Img src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi-dotless2.png" />
     </Wrapper>
   )
-
 }
 
 export default Marker

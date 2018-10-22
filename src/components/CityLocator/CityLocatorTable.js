@@ -21,7 +21,8 @@ class CityLocatorTable extends React.Component {
             <CityLocatorTableRow
               city={city}
               index={index}
-              onSelect={this.handleOnSelect} />
+              onSelect={this.handleOnSelect}
+            />
           )}
         </tbody>
       </table>

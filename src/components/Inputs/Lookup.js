@@ -11,14 +11,12 @@ class CityLocatorSearchBar extends React.Component {
   }
 
   render() {
-    const searchText = this.props.searchText
-
     return (
       <form>
         <input
           type="text"
           placeholder={this.props.placeHolder}
-          value={searchText}
+          value={this.props.searchText}
           className="form-control"
           onChange={this.handleSearchTextChange} />
       </form>

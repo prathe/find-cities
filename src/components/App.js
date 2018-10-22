@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
-import CityLocator from './CityLocator/CityLocator'
+import CityLocator from './CityLocator'
 
 class App extends Component {
   render() {
